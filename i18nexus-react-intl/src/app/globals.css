@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --background-rgb: 247, 247, 247;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+#signup body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+@layer utilities {
+  .sticky-layout {
+    position: sticky;
+    /* right: calc((100% - 1060px) / 2); */
+    top: 50px;
+  }
+  .form-layout {
+    overflow: auto;
+    max-height: calc(100vh - 100px);
+    -ms-overflow-style: none;
+  }
+  .form-layout::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 5px;
+    /* height: 10px; */
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgb(156, 163, 175);
+    border-radius: 10px;
+  }
+  .active {
+    @apply border-2 border-blue-500 bg-white text-blue-500 font-bold;
+  }
+
+  .toggle {
+    @apply rotate-180 transition;
+  }
+
+  .no-toggle {
+    @apply -rotate-0 transition;
+  }
+}
